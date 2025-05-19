@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %highlight{%-5level}{DEBUG=blue} %logger{36} - %highlight{%msg%n}{DEBUG=blue}" disableAnsi="false"/>
+            <RegexFilter regex="RP_MESSAGE.*" onMatch="DENY" onMismatch="NEUTRAL"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.spribe.test" additivity="false" level="DEBUG">
+            <Appender-ref ref="Console"/>
+        </Logger>
+        <Root level="DEBUG">
+            <Appender-ref ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
